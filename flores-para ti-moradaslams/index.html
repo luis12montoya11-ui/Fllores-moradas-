@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050208" />
+    <meta name="description" content="Un universo BTS de flores moradas, pétalos, recuerdos y una carta para mi niña bonita." />
+    <title>Un universo de flores para ti, mi niña bonita</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-locked">
+    <div class="gate" id="gate" role="dialog" aria-labelledby="gateTitle" aria-modal="true">
+      <div class="gate__stars" aria-hidden="true"></div>
+      <div class="seven-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <form class="gate__form" id="passwordForm" autocomplete="off">
+        <span class="gate__mark" aria-hidden="true">&#10047;</span>
+        <p class="eyebrow">Acceso privado · para mi novia, mi wawita hermosa</p>
+        <h1 id="gateTitle">Desde que llegaste, hasta los días más simples florecen contigo.</h1>
+        <p class="gate__hint">Nuestra fecha abre este pequeño universo.</p>
+        <label class="password-field">
+          <span class="sr-only">Contraseña</span>
+          <input id="passwordInput" type="password" inputmode="numeric" maxlength="10" placeholder="DD / MM / AA" aria-describedby="passwordError" autofocus />
+          <button id="togglePassword" type="button" aria-label="Mostrar contraseña"><span aria-hidden="true">&#9673;</span></button>
+        </label>
+        <button class="enter-button" type="submit">Entrar a nuestro universo <span aria-hidden="true">&#8594;</span></button>
+        <p class="gate__error" id="passwordError" role="alert"></p>
+      </form>
+    </div>
+
+    <div class="experience" id="experience" aria-hidden="true">
+      <div class="cosmos" aria-hidden="true">
+        <div class="cosmos__image"></div>
+        <canvas id="starCanvas"></canvas>
+        <div class="cosmos__veil"></div>
+      </div>
+      <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span aria-hidden="true">&#10047;</span>
+          <span>Para mi niña bonita</span>
+        </a>
+        <div class="song-now" aria-hidden="true">
+          <i></i>
+          <span>Serendipity</span>
+        </div>
+        <div class="topbar__actions">
+          <button class="icon-button" id="musicButton" type="button" aria-label="Reproducir música"><span id="musicIcon" aria-hidden="true">&#9835;</span></button>
+          <button class="icon-button" id="settingsButton" type="button" aria-label="Ajustar música"><span aria-hidden="true">&#9881;</span></button>
+        </div>
+      </header>
+
+      <aside class="music-drawer" id="musicDrawer" aria-hidden="true">
+        <button class="drawer-close" id="closeSettings" type="button" aria-label="Cerrar ajustes">&#215;</button>
+        <p class="eyebrow">Nuestra canción</p>
+        <h2>Serendipity</h2>
+        <p class="song-credit">BTS · LOVE YOURSELF 承 Her</p>
+        <div class="album-orbit" aria-hidden="true"><span>&#10047;</span></div>
+        <label class="file-button" for="audioUpload"><span aria-hidden="true">&#9835;</span><span id="audioFileName">Cambiar canción</span></label>
+        <input id="audioUpload" type="file" accept="audio/*" />
+        <label class="volume-row" for="volumeControl"><span>Volumen</span><input id="volumeControl" type="range" min="0" max="1" value="0.42" step="0.05" /></label>
+      </aside>
+
+      <main>
+        <section class="scene scene--opening" id="inicio">
+          <div class="opening-copy" data-reveal>
+            <p class="eyebrow">BTS · flores moradas · tú y yo</p>
+            <h2>Mi universo eres tú</h2>
+            <p>Para mi novia, mi wawita hermosa: la niña que ama los pétalos, las canciones bonitas y hace florecer mis días sin darse cuenta.</p>
+            <div class="purple-promise"><span aria-hidden="true">&#9829;</span> I purple you</div>
+            <a class="scroll-cue" href="#siete"><span>Comenzar el viaje</span><i aria-hidden="true"></i></a>
+          </div>
+
+          <figure class="portrait-orbit" data-reveal>
+            <div class="portrait-orbit__ring"></div>
+            <img src="assets/mi-nina-flor.png" alt="Mi niña bonita con una flor junto al cabello" />
+            <figcaption>La flor más bonita de este universo</figcaption>
+          </figure>
+
+          <img class="bts-hero" src="assets/bts-flores-grupo.png" alt="Ilustración de los siete integrantes de BTS sosteniendo flores moradas" />
+
+          <div class="floating-words" aria-hidden="true">
+            <span style="--x: 7%; --y: 31%; --d: 0s">borahae</span>
+            <span style="--x: 83%; --y: 26%; --d: 1.2s">serendipity</span>
+            <span style="--x: 11%; --y: 72%; --d: 2s">mi hogar</span>
+            <span style="--x: 84%; --y: 70%; --d: .6s">mi flor</span>
+          </div>
+        </section>
+
+        <section class="scene scene--seven" id="siete">
+          <div class="seven-copy" data-reveal>
+            <p class="eyebrow">Siete estrellas · siete razones</p>
+            <h2>Un cielo violeta hecho para ti</h2>
+            <p>Cada estrella guarda una canción de BTS y una razón distinta por la que te amo.</p>
+          </div>
+
+          <div class="bts-moon-wrap" data-reveal>
+            <img src="assets/bts-luna-flores.png" alt="Ilustración de BTS sentados sobre una luna de flores moradas" />
+            <div class="star-ring" id="starRing" aria-label="Siete mensajes para ella">
+              <button class="message-star star--1" type="button" data-number="1" data-song="Serendipity" data-message="Tu sonrisa convierte cualquier día normal en mi día favorito." aria-label="Abrir estrella uno: Serendipity" aria-pressed="false"><span>1</span></button>
+              <button class="message-star star--2" type="button" data-number="2" data-song="Euphoria" data-message="Admiro tu manera de seguir adelante incluso cuando nadie ve el esfuerzo." aria-label="Abrir estrella dos: Euphoria" aria-pressed="false"><span>2</span></button>
+              <button class="message-star star--3" type="button" data-number="3" data-song="Mikrokosmos" data-message="Tu ternura hace que mi corazón encuentre calma, como un cielo lleno de pequeñas luces." aria-label="Abrir estrella tres: Mikrokosmos" aria-pressed="false"><span>3</span></button>
+              <button class="message-star star--4" type="button" data-number="4" data-song="Magic Shop" data-message="En mí siempre tendrás un lugar seguro para descansar, reír y volver a sentirte tú." aria-label="Abrir estrella cuatro: Magic Shop" aria-pressed="false"><span>4</span></button>
+              <button class="message-star star--5" type="button" data-number="5" data-song="Butterfly" data-message="Amo a la niña bonita que eres y cada versión de ti que sigue floreciendo." aria-label="Abrir estrella cinco: Butterfly" aria-pressed="false"><span>5</span></button>
+              <button class="message-star star--6" type="button" data-number="6" data-song="Moon" data-message="Eres mi coincidencia más bonita y la luz que siempre busco en este universo inmenso." aria-label="Abrir estrella seis: Moon" aria-pressed="false"><span>6</span></button>
+              <button class="message-star star--7" type="button" data-number="7" data-song="For Youth" data-message="Te elegiría en cada vida, en cada galaxia y en cada canción, mi wawita hermosa." aria-label="Abrir estrella siete: For Youth" aria-pressed="false"><span>7</span></button>
+            </div>
+          </div>
+          <div class="star-story" id="starStory" aria-live="polite">
+            <span class="star-song" id="starSong">Nuestra constelación</span>
+            <p class="star-message" id="starMessage">Toca una estrella para encenderla</p>
+            <div class="star-progress" aria-label="Progreso de estrellas descubiertas">
+              <span id="starProgress">0 de 7 estrellas encendidas</span>
+              <div class="star-progress__dots" id="starProgressDots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="seven-secret" id="sevenSecret" aria-hidden="true">
+            <span aria-hidden="true">&#10022;</span>
+            <p>Encendiste las siete. Como BTS son siete y hacen un universo, tú haces que todos mis días tengan luz. Te amo, mi wawita hermosa.</p>
+          </div>
+          <p class="bts-constellation" aria-label="Canciones que forman la constelación">Serendipity · Euphoria · Mikrokosmos · Magic Shop · Butterfly · Moon · For Youth</p>
+        </section>
+
+        <section class="scene scene--memories" id="recuerdos">
+          <div class="memories-heading" data-reveal>
+            <p class="eyebrow">Nuestro pequeño museo</p>
+            <h2>Recuerdos que merecen su propia constelación</h2>
+          </div>
+          <div class="memory-gallery">
+            <figure class="memory-photo memory-photo--portrait" data-reveal>
+              <img src="assets/mi-nina-flor.png" alt="Retrato de mi novia con una flor" />
+              <figcaption>Mi flor favorita siempre vas a ser tú.</figcaption>
+            </figure>
+            <div class="memory-center" data-reveal>
+              <span class="memory-number">16 · 06 · 26</span>
+              <p>El día en que comenzó nuestro universo. No necesito guardar todas las estrellas; me basta con guardar los momentos en los que tú brillaste cerca de mí.</p>
+              <button class="petal-wish" id="petalWish" type="button"><span aria-hidden="true">&#10047;</span> Soltar pétalos por ti</button>
+            </div>
+            <figure class="memory-photo memory-photo--museum" data-reveal>
+              <img src="assets/recuerdo-museo.png" alt="Mi novia disfrutando una visita al museo" />
+              <figcaption>Verte descubrir el mundo también es una forma de amarte.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="scene scene--letter" id="carta">
+          <div class="letter-intro" data-reveal>
+            <p class="eyebrow">Una historia solo para ella</p>
+            <h2>Escribí un pequeño libro para mi wawita hermosa</h2>
+            <p>Hay cosas que una sola página no alcanza a decir.</p>
+            <a class="letter-trigger" id="openLetter" href="#bookStage"><span aria-hidden="true">&#10022;</span>Abrir nuestro libro</a>
+          </div>
+
+          <div class="book-stage" id="bookStage" aria-hidden="true">
+            <a class="book-close" id="closeBook" href="#carta" aria-label="Cerrar libro">&#215;</a>
+            <div class="book-shell" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+              <div class="book" id="book">
+                <section class="book-spread is-active" data-spread="0">
+                  <div class="book-page book-page--cover">
+                    <img src="assets/mi-nina-flor.png" alt="Retrato de mi niña bonita" />
+                    <div class="book-cover-copy">
+                      <span>Volumen I</span>
+                      <h3 id="bookTitle">Para mi wawita, la niña que hace florecer mi universo</h3>
+                      <p>16 de junio de 2026</p>
+                    </div>
+                  </div>
+                  <div class="book-page book-page--letter">
+                    <p class="book-kicker">Capítulo uno · Serendipia</p>
+                    <h3>Mi niña bonita, mi novia 💜</h3>
+                    <p>Hay encuentros que parecen casualidad hasta que el corazón entiende que estaba esperando por ellos. Tú llegaste así: sin pedir permiso, llenando de luz lugares de mí que ni siquiera sabía que estaban oscuros.</p>
+                    <p>Desde entonces, las canciones suenan distinto, los días sencillos tienen algo especial y hasta el silencio se siente bonito cuando puedo compartirlo contigo.</p>
+                    <blockquote>No fue suerte encontrarte. Fue mi serendipia favorita.</blockquote>
+                  </div>
+                </section>
+
+                <section class="book-spread" data-spread="1">
+                  <div class="book-page book-page--photo">
+                    <img src="assets/recuerdo-museo.png" alt="Un recuerdo de mi novia en el museo" />
+                    <p>Quiero seguir mirando el mundo contigo, incluso en sus detalles más pequeños 💜💛.</p>
+                  </div>
+                  <div class="book-page book-page--letter">
+                    <p class="book-kicker">Capítulo dos · Lo que admiro de ti</p>
+                    <h3>Te miro florecer💜🥰</h3>
+                    <p>Admiro la persona que eres, incluso esas partes que tú a veces no alcanzas a ver. Tu forma de esforzarte, de sentir intensamente, de cuidar y de volver a empezar deja huellas preciosas.</p>
+                    <p>No tienes que ser perfecta para merecer cosas hermosas💜. Eres suficiente en cada etapa: cuando brillas, cuando dudas, cuando ríes y también cuando necesitas descansar.</p>
+                    <p>Si alguna vez olvidas lo valiosa que eres, vuelve a estas páginas. Yo quiero recordártelo todas las veces que haga falta.</p>
+                  </div>
+                </section>
+
+                <section class="book-spread" data-spread="2">
+                  <div class="book-page book-page--letter book-page--last">
+                    <p class="book-kicker">Capítulo tres · Mi promesa violeta</p>
+                    <h3>En este universo y en todos</h3>
+                    <p>Ojalá este universo de BTS, flores y pétalos te acompañe en los días suaves y en los días pesados. Que cada flor te recuerde que no estás sola, que tu presencia importa y que mi mundo es más bonito porque tú estás en él.</p>
+                    <p>Hoy no te regalo solamente flores. Te regalo un lugar al que puedas volver para mirar todo lo bonito que vive en ti.</p>
+                    <p class="book-signature">Con todo mi amor 😘💜,<br /><span>la persona que siempre elegirá coincidir contigo, tú Luigi mor 💛.</span></p>
+                  </div>
+                  <div class="book-page book-page--moon">
+                    <img src="assets/bts-luna-flores.png" alt="BTS sobre una luna de flores moradas" />
+                    <p>I purple you, mi amor.</p>
+                    <span>Fin de este capítulo. Lo nuestro continúa💜🥰💛.</span>
+                  </div>
+                </section>
+              </div>
+
+              <div class="book-controls">
+                <button id="previousPage" type="button" aria-label="Página anterior">&#8592;</button>
+                <span id="pageIndicator">1 / 3</span>
+                <button id="nextPage" type="button" aria-label="Página siguiente">&#8594;</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="scene scene--final" id="final">
+          <div class="final-copy" data-reveal>
+            <p class="eyebrow">Nuestro encore</p>
+            <h2>En cualquier universo, volvería a elegirte.</h2>
+            <p>Feliz día de las flores moradas, mi niña bonita, mi novia y mi lugar favorito.😘</p>
+            <button id="restartButton" type="button">Volver al comienzo</button>
+          </div>
+          <img class="bts-finale" src="assets/bts-flores-grupo.png" alt="BTS con ramos de flores moradas" />
+        </section>
+      </main>
+
+      <audio id="backgroundAudio" loop preload="auto"><source src="assets/cancion.mp3" type="audio/mpeg" /></audio>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
